@@ -35,12 +35,12 @@ export const Components = () => {
                     marginTop: "2%"
 
                 }} type="text" onChange={(e) => setInput(e.target.value)} placeholder="see your financal report" />
-                {newalbum.map((e) => {
+                {newalbum.map((e,indexe) => {
                     return (
                         <>
 
 
-                            <Typography sx={{ display: 'flex', flexDirection: "row", my: 5 }} variant="h4" gutterBottom component="div">
+                            <Typography key={indexe} sx={{ display: 'flex', flexDirection: "row", my: 5 }} variant="h4" gutterBottom component="div">
                                 {e.title}
                             </Typography>
 
@@ -52,10 +52,10 @@ export const Components = () => {
                                     else if (val.title.toLowerCase().includes(input.toLowerCase())) {
                                         return val
                                     }
-                                }).map((ch) => {
+                                }).map((ch ,indexch) => {
                                     return (
                                         <>
-                                            <Box sx={{ display: 'flex', flexDirection: "row"}}>
+                                            <Box key={indexch} sx={{ display: 'flex', flexDirection: "row"}}>
 
                                                 <img src={ch.url} width="65" height="65" />
 
